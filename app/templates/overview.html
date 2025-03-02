@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Clean Architecture</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #007bff, #4da3ff);
+            color: white;
+            padding: 80px 0;
+        }
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0,0,0,.04);
+        }
+        .feature-card {
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,.1);
+            height: 100%;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,.1);
+        }
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #007bff;
+        }
+        .docs-section {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 30px 0;
+        }
+        footer a {
+            color: #4da3ff;
+        }
+        .badge-custom {
+            margin-right: 5px;
+            padding: 5px 10px;
+            font-size: 0.9rem;
+        }
+        .flow-step {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 15px;
+        }
+        .flow-step:before {
+            content: attr(data-step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 4px;
+            border-radius: 4px;
+            color: #e83e8c;
+        }
+        .architecture-img {
+            max-width: 100%;
+            box-shadow: 0 4px 8px rgba(0,0,0,.1);
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand font-weight-bold" href="#">
+                <i class="fas fa-flask mr-2"></i>Flask Clean Architecture
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#architecture">Architecture</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#dataflow">Data Flow</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://github.com/panjidwisatrio/flask-clean-architecture" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4 font-weight-bold">🧪 Flask Clean Architecture</h1>
+            <p class="lead mb-4">A modern Flask application template with JavaScript-driven frontend</p>
+            <div class="mb-4">
+                <span class="badge badge-light badge-custom">Python 3.8+</span>
+                <span class="badge badge-warning badge-custom">MIT License</span>
+                <span class="badge badge-dark badge-custom">Code Style: Black</span>
+            </div>
+            <a href="https://github.com/panjidwisatrio/flask-clean-architecture" class="btn btn-lg btn-light mr-2" target="_blank">
+                <i class="fab fa-github mr-2"></i>View on GitHub
+            </a>
+            <a href="#architecture" class="btn btn-lg btn-outline-light">
+                <i class="fas fa-book mr-2"></i>Learn More
+            </a>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="container my-5">
+        <h2 class="text-center mb-5"><i class="fas fa-layer-group mr-2"></i>Architecture Overview</h2>
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h4>Clean Architecture Principles</h4>
+                        <p>This project follows Clean Architecture principles with a JavaScript-heavy frontend approach:</p>
+                        <ul>
+                            <li><strong>Flask as lightweight backend</strong> - Flask serves primarily as a template rendering engine</li>
+                            <li><strong>JavaScript-driven interactions</strong> - All API interactions and dynamic functionality are handled in JavaScript</li>
+                            <li><strong>Clear separation of concerns</strong> - Presentation logic is separated from business logic</li>
+                            <li><strong>Independence from frameworks</strong> - Core business logic doesn't depend on Flask or other frameworks</li>
+                            <li><strong>Testability</strong> - All components are designed to be easily testable in isolation</li>
+                        </ul>
+                        <div class="bg-light p-3 border-left border-primary" style="border-width: 4px!important;">
+                            <strong>Key Implementation:</strong> This approach minimizes server-side processing and creates a responsive, dynamic user experience while leveraging Flask's excellent templating capabilities.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Flow Section -->
+    <section id="dataflow" class="docs-section">
+        <div class="container">
+            <h2 class="text-center mb-5"><i class="fas fa-exchange-alt mr-2"></i>Data Flow</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">JavaScript-Centric Approach</h5>
+                            <div class="flow-step" data-step="1">
+                                <h6>Initial Request</h6>
+                                <p>Flask routes handle the initial request and render Jinja templates</p>
+                            </div>
+                            <div class="flow-step" data-step="2">
+                                <h6>Frontend Initialization</h6>
+                                <p>JavaScript loads and initializes the client-side application</p>
+                            </div>
+                            <div class="flow-step" data-step="3">
+                                <h6>API Interaction</h6>
+                                <p>JavaScript API helpers handle all API calls while service modules manage business logic</p>
+                            </div>
+                            <div class="flow-step" data-step="4">
+                                <h6>DOM Updates</h6>
+                                <p>JavaScript updates the UI based on API responses</p>
+                            </div>
+                            <div class="flow-step" data-step="5">
+                                <h6>State Management</h6>
+                                <p>JavaScript manages application state on the client side</p>
+                            </div>
+                            <div class="alert alert-info mt-3">
+                                <i class="fas fa-info-circle mr-2"></i>This approach minimizes server-side processing and creates a responsive, dynamic user experience while leveraging Flask's excellent templating capabilities.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container my-5">
+        <h2 class="text-center mb-5"><i class="fas fa-star mr-2"></i>Features</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card feature-card p-4">
+                    <div class="card-body text-center">
+                        <div class="feature-icon"><i class="fas fa-code"></i></div>
+                        <h5 class="card-title">Clean Code Structure</h5>
+                        <p class="card-text">Well-organized project layout with clear separation of concerns and dependencies.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card feature-card p-4">
+                    <div class="card-body text-center">
+                        <div class="feature-icon"><i class="fas fa-server"></i></div>
+                        <h5 class="card-title">Lightweight Backend</h5>
+                        <p class="card-text">Flask serves templates while JavaScript handles API interactions and dynamic content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card feature-card p-4">
+                    <div class="card-body text-center">
+                        <div class="feature-icon"><i class="fas fa-users-cog"></i></div>
+                        <h5 class="card-title">Developer Experience</h5>
+                        <p class="card-text">Fast development cycles with intuitive structure and minimal boilerplate.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5><i class="fas fa-flask mr-2"></i>Flask Clean Architecture</h5>
+                    <p>A modern template for building maintainable web applications with Flask and JavaScript.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fas fa-home mr-2"></i>Home</a></li>
+                        <li><a href="#architecture"><i class="fas fa-layer-group mr-2"></i>Architecture</a></li>
+                        <li><a href="#dataflow"><i class="fas fa-exchange-alt mr-2"></i>Data Flow</a></li>
+                        <li><a href="https://github.com/panjidwisatrio/flask-clean-architecture"><i class="fab fa-github mr-2"></i>GitHub</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Resources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://flask.palletsprojects.com/"><i class="fas fa-flask mr-2"></i>Flask</a></li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><i class="fab fa-js mr-2"></i>JavaScript</a></li>
+                        <li><a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html"><i class="fas fa-book mr-2"></i>Clean Architecture</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="text-center">
+                <p class="mb-0">© 2023 Flask Clean Architecture. Licensed under MIT License.</p>
+                <p class="mt-2"><small>Built with <i class="fas fa-heart text-danger"></i> by panjidwisatrio</small></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
